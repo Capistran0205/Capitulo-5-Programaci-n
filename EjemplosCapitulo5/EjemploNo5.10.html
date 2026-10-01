@@ -7,27 +7,27 @@
       <meta charset = "utf-8">
       <title>Ejemplo No 5.10: Borde de imagen</title>
       <link rel="stylesheet" type="text/css" href="/Estilos/Botones.css">
-      <style type = "text/css">
-         div
-         {
+         <style type="text/css">
+         /* Usamos :not para que los estilos de las cajas no afecten al menú de botones */
+         div:not(.botones-navegacion) {
             border-width: 30px;
+            border-style: solid; /* Requerido por algunos navegadores para renderizar el border-image */
             width: 234px;
-            padding: 20px 20px;
+            padding: 20px;
+            margin-bottom: 20px;
          }
-         #stretch
-         {
-            -webkit-border-image: url(/Resources/border.png) 80 80 80 80 stretch;
-            -moz-border-image: url(/Resources/border.png) 80 80 80 80 stretch; 
-            -o-border-image: url(/Resources/border.png) 80 80 80 80 stretch; 
-            border-image: url(/Resources/border.png) 80 80 80 80 stretch;
+         #stretch {
+            border-image: url('/Resources/border.png') 80 80 80 80 stretch;
          }
-         #repeat
-         {
-            -webkit-border-image: url(/Resources/border.png) 34% 34% repeat;
-            -moz-border-image: url(/Resources/border.png) 34% 34% repeat; 
-            -o-border-image: url(/Resources/border.png) 34% 34% repeat; 
-            border-image: url(/Resources/border.png) 34% 34% repeat;
+         #repeat {
+            border-image: url('/Resources/border.png') 34% 34% repeat;
          }
+         /* Limpiamos cualquier flujo flotante y damos espacio a la navegación */
+         .botones-navegacion {
+            clear: both;
+            margin-top: 20px;
+         }
+      </style>
       </style>
    </head>
    <body>
